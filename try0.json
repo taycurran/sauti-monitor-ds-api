@@ -1,0 +1,84 @@
+{
+    "wholesale_data": [
+        {
+            "country": "UGA",
+            "marketplace": "Kiboga",
+            "product": "Maize",
+            "price": "550",
+            "category": "wholesale",
+            "phase": "stress"
+        },
+        {
+            "country": "UGA",
+            "marketplace": "Masindi",
+            "product": "Yellow Beans",
+            "price": "1500",
+            "category": "wholesale",
+            "phase": "normal"
+        },
+        {
+            "country": "KEN",
+            "marketplace": "Eldoret",
+            "product": "Beans",
+            "price": "112",
+            "category": "wholesale",
+            "phase": "Alert"
+        },
+        {
+            "country": "KEN",
+            "marketplace": "Nakuru",
+            "product": "Maize",
+            "price": "18",
+            "category": "wholesale",
+            "phase": "stress"
+        },
+        {
+            "country": "DRC",
+            "marketplace": "Lubumbashi",
+            "product": "Green Peas",
+            "price": "101",
+            "category": "wholesale",
+            "phase": "Normal"
+        },
+        {
+            "country": "BDI",
+            "marketplace": "Bujumbura",
+            "product": "Maize",
+            "price": "48",
+            "category": "wholesale",
+            "phase": "stress"
+        },
+        {
+            "country": "UGA",
+            "marketplace": "Busia",
+            "product": "Maize",
+            "price": "20",
+            "category": "wholesale",
+            "phase": "Normal"
+        },
+        {
+            "country": "KEN",
+            "marketplace": "Nakuru",
+            "product": "Rice",
+            "price": "82",
+            "category": "wholesale",
+            "phase": "Normal"
+        },
+        {
+            "country": "UGA",
+            "marketplace": "Tororo",
+            "product": "mixed beans",
+            "price": "76",
+            "category": "wholesale",
+            "phase": "stress"
+        },
+        {
+            "country": "UGA",
+            "marketplace": "Tororo",
+            "product": "Flour",
+            "price": "27",
+            "category": "wholesale",
+            "phase": "Alert"
+        }
+    ]
+}

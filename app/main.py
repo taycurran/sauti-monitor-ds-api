@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 # for data handling
 import pandas as pd
-
+from fastapi.encoders import jsonable_encoder
 # imports for database
 from typing import List
 from . import crud, models, schemas 
@@ -48,6 +48,10 @@ async def root():
   <h1>Sauti Market Monitor</h1>
   <p>Go to <a href="/docs">/docs</a> for documentation.</p>
   """)
+
+@app.get("/try0")
+async def try0():
+  return jsonable_encoder(pd.read_json("try0.json"))
 
 @app.get("/markets/", response_model=List[schemas.Market])
 def read_markets(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
