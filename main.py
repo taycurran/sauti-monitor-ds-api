@@ -35,6 +35,6 @@ async def root():
 
 @app.get("/qc_wholesale")
 async def qc_wholesale():
-  qc_ws = pd.read_csv("app/qc_wholesale.csv")
+  qc_ws = pd.read_csv("qc_wholesale.csv")
   qc_ws = qc_ws.to_json()
   return qc_ws
