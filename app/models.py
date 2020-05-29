@@ -1,4 +1,4 @@
-from database import Base
+from .database import Base
 from sqlalchemy import Column, ForeignKey, Integer, String, Float, DateTime, Boolean
 from sqlalchemy.orm import relationship
 
@@ -26,7 +26,7 @@ class Markets(Base):
     market_name = Column(String)
     country_code = Column(String)
 
-    products = relationship("ProductRawInfo", back_populates="markets")
+    #products = relationship("ProductRawInfo", back_populates="markets")
 
 class ProductRawInfo(Base):
     __tablename__ = "product_raw_info"
@@ -40,6 +40,6 @@ class ProductRawInfo(Base):
     retail_observed_price = Column(Float)
     wholesale_observed_price = Column(Float)
 
-    markets = relationship("Markets", back_populates="products")
+    #markets = relationship("Markets", back_populates="products")
 
 

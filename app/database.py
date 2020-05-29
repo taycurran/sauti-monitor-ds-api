@@ -7,10 +7,10 @@ load_dotenv()
 
 # Create Connection Engine
 # represents the core interface to the database
-engine = create_engine(os.getenv("aws_db_url"), echo=True)
+engine = create_engine(os.getenv("aws_db_url"), echo=False)
 
 # Define Class
-#SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # returns a class
 Base = declarative_base()
