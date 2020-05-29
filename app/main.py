@@ -2,8 +2,6 @@
 from fastapi import FastAPI#, File, UploadFile
 # allows web team access to app
 from fastapi.middleware.cors import CORSMiddleware
-# allows you to create a class to structure POST input
-#from pydantic import BaseModel
 # allows for html rendering
 from fastapi.responses import HTMLResponse
 # for data handling
