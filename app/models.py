@@ -12,11 +12,11 @@ class QC_Wholesale(Base):
     source = Column(String)
     start = Column(String)
     end = Column(String)
-    timeliness = Column(Float)
-    data_length = Column(Float)
-    completeness = Column(Float)
-    duplicates = Column(Float)
-    mode_D = Column(Float)
+    timeliness = Column(String)
+    data_length = Column(String)
+    completeness = Column(String)
+    duplicates = Column(String)
+    mode_D = Column(String)
 
 class Markets(Base):
     __tablename__ = "markets"
@@ -26,20 +26,14 @@ class Markets(Base):
     market_name = Column(String)
     country_code = Column(String)
 
-    #products = relationship("ProductRawInfo", back_populates="markets")
+# class ProductRawInfo(Base):
+#     __tablename__ = "product_raw_info"
 
-class ProductRawInfo(Base):
-    __tablename__ = "product_raw_info"
-
-    product_name = Column(String, primary_key=True)
-    market_id = Column(String, primary_key=True)
-    unit_scale = Column(String)
-    source_id = Column(Integer)
-    currency_code = Column(String)
-    date_price = Column(DateTime)
-    retail_observed_price = Column(Float)
-    wholesale_observed_price = Column(Float)
-
-    #markets = relationship("Markets", back_populates="products")
-
-
+#     product_name = Column(String, primary_key=True)
+#     market_id = Column(String, primary_key=True)
+#     unit_scale = Column(String)
+#     source_id = Column(Integer)
+#     currency_code = Column(String)
+#     date_price = Column(DateTime)
+#     retail_observed_price = Column(Float)
+#     wholesale_observed_price = Column(Float)

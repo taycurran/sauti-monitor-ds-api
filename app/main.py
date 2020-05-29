@@ -51,13 +51,29 @@ async def root():
 
 @app.get("/markets/", response_model=List[schemas.Market])
 def read_markets(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    markets = crud.get_market(db, skip=skip, limit=limit)
+    markets = crud.get_markets(db, skip=skip, limit=limit)
+    return markets
+    
+@app.get("/markets_by_country_code/{country_code}", response_model=List[schemas.Market])
+def markets_by_country_code(country_code: str = "UGA", db: Session = Depends(get_db)):
+    markets = crud.get_markets_by_country_code(db, country_code=country_code)
+    if markets is None:
+        raise HTTPException(status_code=404, detail="Country Code not Recognized")
     return markets
 
-@app.get("/product_raw_info/", response_model=List[schemas.ProductRawInfo])
-def read_products_raw_info(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    products_raw = crud.get_product_raw_info(db, skip=skip, limit=limit)
-    return products_raw
+@app.get("/market_by_name/{market_name}", response_model=schemas.Market)
+def market_by_name(market_name: str = "Kiboga", db: Session = Depends(get_db)):
+    market = crud.get_market_by_name(db, market_name=market_name)
+    if market is None:
+        raise HTTPException(status_code=404, detail="Name not Recognized")
+    return market
+
+
+# @app.get("/qc_wholesale/", response_model=schemas.QCWholesale)
+# def qc_wholesale(db: Session = Depends(get_db)):
+#   qc_table = crud.get_qc_wholesale(db)
+#   #return qc_table
+#   return {"message": "Under Construction"}
 
 @app.get("/qc_wholesale_dummy")
 async def qc_wholesale_dummy():
